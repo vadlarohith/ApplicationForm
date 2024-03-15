@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="{% static 'CSS/details.css' %}">
+    <style>
+        h4{
+            color: white;
+            padding-left: 85%;
+            
+        }
+        a{
+            text-decoration: none;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Date Of Birth</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                    <tr>
+                        <td>{{i.Name}}</td>
+                        <td>{{i.Email}}</td>
+                        <td>{{i.Age}}</td>
+                        <td>{{i.DateOfBirth}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h4><a href="{% url 'Home' %}">&lt; Go Back</a></h4>
+    </div>
+</body>
+</html>
